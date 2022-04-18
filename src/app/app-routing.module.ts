@@ -10,7 +10,11 @@ const routes: Routes = [
   { path: "employee-create", component: EmployeeCreateComponent},
   { path: "employee-update/:id", component: EmployeeUpdateComponent},
   { path: "help/angular-home", component: AngularHomeComponent},
-  { path: "", redirectTo: "employees", pathMatch: "full" }
+  { path: "", redirectTo: "employees", pathMatch: "full" },
+  {
+    path: 'login',
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+  },
 ];
 
 @NgModule({
